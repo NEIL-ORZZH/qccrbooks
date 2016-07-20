@@ -3,6 +3,7 @@ package com.qccr.books;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -16,6 +17,8 @@ import net.wequick.small.Small;
  * @desc:
  */
 public class LaunchActivity extends AppCompatActivity {
+
+    private static final String TAG = "LaunchActivity";
 
     private View mContentView;
 
@@ -41,6 +44,8 @@ public class LaunchActivity extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                 | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
+        Log.e(TAG, "onCreate: " + Small.getBaseUri());
     }
 
     @Override

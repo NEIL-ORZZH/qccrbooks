@@ -25,6 +25,7 @@ public class HostApp extends Application {
 
         // !Important, ensure the Small can smooth functioning even 
         // after the application was killed in background.
+        Small.setBaseUri("com.qccr.books.app.");
         Small.preSetUp(this);
     }
 }

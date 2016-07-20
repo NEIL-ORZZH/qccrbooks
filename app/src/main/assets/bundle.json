@@ -4,6 +4,18 @@
     {
       "uri": "main",
       "pkg": "com.qccr.books.app.main"
+    },
+    {
+      "uri": "topic",
+      "pkg": "com.qccr.books.app.topic"
+    },
+    {
+      "uri": "message",
+      "pkg": "com.qccr.books.app.message"
+    },
+    {
+      "uri": "user",
+      "pkg": "com.qccr.books.app.user"
     }
   ]
 }

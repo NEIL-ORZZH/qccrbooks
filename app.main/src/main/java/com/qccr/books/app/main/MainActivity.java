@@ -1,9 +1,14 @@
 package com.qccr.books.app.main;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.TextView;
+
+import net.wequick.small.Small;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -19,18 +24,22 @@ import me.majiajie.pagerbottomtabstrip.listener.OnTabItemSelectListener;
  * @desc:
  */
 public class MainActivity extends AppCompatActivity {
+    static final String[] sUris = new String[]{"topic", "message", "user"};
+    static final String[] sTitles = new String[]{"Top", "Message", "User"};
     private static final String TAG = MainActivity.class.getName();
-
     private static final int PAGE_TOPIC = 0;
     private static final int PAGE_MESSAGE = 1;
+
     private static final int PAGE_USER = 2;
 
     @BindView(R.id.tab)
     PagerBottomTabLayout mTab;
-    @BindView(R.id.tv_page_content)
-    TextView tvPageContent;
+
+    @BindView(R.id.vp_container)
+    ViewPager vpContainer;
 
     Controller mController;
+    SectionsPagerAdapter mSectionsPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,19 +60,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void initData() {
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+
+        vpContainer.setAdapter(mSectionsPagerAdapter);
+
         mController.addTabItemClickListener(new OnTabItemSelectListener() {
 
             @Override
             public void onSelected(int index, Object tag) {
                 switch (index) {
                     case PAGE_TOPIC:
-                        tvPageContent.setText("发现");
                         break;
                     case PAGE_MESSAGE:
-                        tvPageContent.setText("消息");
                         break;
                     case PAGE_USER:
-                        tvPageContent.setText("我的");
                         break;
                     default:
                         break;
@@ -76,4 +86,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
+    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+
+        public SectionsPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            // getItem is called to instantiate the fragment for the given page.
+            // Return a PlaceholderFragment (defined as a static inner class below).
+            Fragment fragment = Small.createObject("fragment-v4", sUris[position], MainActivity.this);
+
+            return fragment;
+        }
+
+        @Override
+        public int getCount() {
+            return sTitles.length;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return sTitles[position];
+        }
+    }
+
 }
