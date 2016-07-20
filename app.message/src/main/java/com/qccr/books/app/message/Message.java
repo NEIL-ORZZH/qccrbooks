@@ -11,7 +11,7 @@ public class Message {
     /**
      * 图片地址
      */
-    public String imageUrl;
+    public String titlePic;
     /**
      * 标题
      */
@@ -35,5 +35,5 @@ public class Message {
     /**
      * 时间戳
      */
-    public String paperTime;
+    public String date;
 }
