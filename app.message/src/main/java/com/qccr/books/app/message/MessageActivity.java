@@ -47,6 +47,16 @@ public class MessageActivity extends AppCompatActivity {
         message.paperUrl = "http://edu.163.com/16/0715/06/BS0DLRPR00294NE9.html";
         messages.add(message);
 
+        Message msg = new Message();
+        msg.title = "每天一点设计好灵感";
+        msg.titlePic = "http://cdn.ruguoapp.com/o_1al194mb71sns7ke16q3s9o1k9i5j.jpg?imageView2/0/w/720/h/360";
+        msg.date = "2016-06-12T03:20:41.097Z";
+        msg.content = "好品位不是一天养成的，每天看一点好设计，灵感不期而至。";
+        msg.commentCount = 22;
+        msg.likeCount = 200;
+        msg.paperUrl = "http://edu.163.com/16/0715/06/BS0DLRPR00294NE9.html";
+        messages.add(msg);
+
         mMessageAdapter = new MessageAdapter(messages);
         messageContent.setLayoutManager(new LinearLayoutManager(this));
         messageContent.setAdapter(mMessageAdapter);
