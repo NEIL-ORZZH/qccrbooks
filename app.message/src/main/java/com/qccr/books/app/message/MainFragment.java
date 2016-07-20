@@ -12,15 +12,11 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 /**
  * A simple {@link Fragment} subclass.
  */
 public class MainFragment extends Fragment {
 
-    @BindView(R.id.message_content)
     RecyclerView messageContent;
 
     MessageAdapter mMessageAdapter;
@@ -34,16 +30,19 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.activity_message, container, false);
-        ButterKnife.bind(getContext(), rootView);
 
+        View rootView = inflater.inflate(R.layout.activity_message, container, false);
+        initView(rootView);
         initData();
 
         return rootView;
     }
 
-    void initData() {
+    void initView(View rootView) {
+        messageContent = (RecyclerView) rootView.findViewById(R.id.message_content);
+    }
 
+    void initData() {
         List<Message> messages = new ArrayList<>();
         Message message = new Message();
         message.title = "摄影精选推送";

@@ -10,8 +10,6 @@ import android.util.Log;
 
 import net.wequick.small.Small;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import me.majiajie.pagerbottomtabstrip.Controller;
 import me.majiajie.pagerbottomtabstrip.PagerBottomTabLayout;
 import me.majiajie.pagerbottomtabstrip.listener.OnTabItemSelectListener;
@@ -25,17 +23,13 @@ import me.majiajie.pagerbottomtabstrip.listener.OnTabItemSelectListener;
  */
 public class MainActivity extends AppCompatActivity {
     static final String[] sUris = new String[]{"topic", "message", "user"};
-    static final String[] sTitles = new String[]{"Top", "Message", "User"};
+    static final String[] sTitles = new String[]{"Topic", "Message", "User"};
     private static final String TAG = MainActivity.class.getName();
     private static final int PAGE_TOPIC = 0;
     private static final int PAGE_MESSAGE = 1;
-
     private static final int PAGE_USER = 2;
 
-    @BindView(R.id.tab)
     PagerBottomTabLayout mTab;
-
-    @BindView(R.id.vp_container)
     ViewPager vpContainer;
 
     Controller mController;
@@ -45,13 +39,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
 
         initView();
         initData();
     }
 
     void initView() {
+        vpContainer = (ViewPager) findViewById(R.id.vp_container);
+        mTab = (PagerBottomTabLayout) findViewById(R.id.tab);
+
         mController = mTab.builder()
                 .addTabItem(R.mipmap.ic_topic_unselected, R.mipmap.ic_topic, "发现", getResources().getColor(android.R.color.black))
                 .addTabItem(R.mipmap.ic_message_unselected, R.mipmap.ic_message, "消息", getResources().getColor(android.R.color.black))
