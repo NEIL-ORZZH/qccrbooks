@@ -11,6 +11,13 @@ import me.majiajie.pagerbottomtabstrip.Controller;
 import me.majiajie.pagerbottomtabstrip.PagerBottomTabLayout;
 import me.majiajie.pagerbottomtabstrip.listener.OnTabItemSelectListener;
 
+/**
+ * @author: zhuhuanhuan
+ * @time: 17:24
+ * @email: zhuhuanhuan@qccr.com
+ * @version: 1.0.0
+ * @desc:
+ */
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getName();
 

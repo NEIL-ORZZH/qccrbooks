@@ -9,7 +9,11 @@ import android.widget.TextView;
 import net.wequick.small.Small;
 
 /**
- * An example launcher activity that setUp the Small bundles and launch the main plugin.
+ * @author: zhuhuanhuan
+ * @time: 17:24
+ * @email: zhuhuanhuan@qccr.com
+ * @version: 1.0.0
+ * @desc:
  */
 public class LaunchActivity extends AppCompatActivity {
 
