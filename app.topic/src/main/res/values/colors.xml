@@ -5,5 +5,7 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="fengexian">#8F8F8F</color>
-
+    <color name="very_dark_grayish_blue_48">#ff484b50</color>
+    <color name="dark_gray_99">#ff999999</color>
+    <color name="white">#ffffffff</color>
 </resources>

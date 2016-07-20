@@ -1,88 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
         android:text="猜你喜欢"
-        android:textColor="@android:color/background_dark"
-        android:textSize="15sp"/>
+        android:textColor="@color/very_dark_grayish_blue_48" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/fengexian"/>
+        android:background="@color/fengexian" />
 
-    <RelativeLayout
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_guess"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/iv_first"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
-            android:src="@mipmap/ic_launcher"/>
-
-        <TextView
-            android:id="@+id/tv_first"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/iv_first"
-            android:layout_below="@+id/iv_first"
-            android:text="第一张图片"/>
-
-        <ImageView
-            android:id="@+id/iv_second"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:src="@mipmap/ic_launcher"/>
-
-        <TextView
-            android:id="@+id/tv_second"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/tv_first"
-            android:layout_alignStart="@+id/iv_second"
-            android:layout_toEndOf="@+id/tv_first"
-            android:text="第二张图片"/>
-
-        <ImageView
-            android:id="@+id/iv_third"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
-            android:src="@mipmap/ic_launcher"/>
-
-        <TextView
-            android:id="@+id/tv_third"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/iv_third"
-            android:layout_below="@+id/iv_third"
-            android:text="第三张图片"/>
-    </RelativeLayout>
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/btn_change"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="换一换"/>
+        android:layout_height="wrap_content" />
+
 
 </LinearLayout>
