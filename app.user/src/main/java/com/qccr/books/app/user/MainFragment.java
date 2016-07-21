@@ -10,8 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -21,17 +19,11 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class MainFragment extends Fragment {
 
 
-    @BindView(R.id.user_image)
     CircleImageView userImage;
-    @BindView(R.id.user_setting)
     ImageView userSetting;
-    @BindView(R.id.tv_1)
     TextView tv1;
-    @BindView(R.id.tv_2)
     TextView tv2;
-    @BindView(R.id.tv_3)
     TextView tv3;
-    @BindView(R.id.tv_4)
     TextView tv4;
 
     public MainFragment() {
@@ -40,17 +32,36 @@ public class MainFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater,
+                             ViewGroup container,
                              Bundle savedInstanceState) {
+
         View rootView = inflater.inflate(R.layout.activity_user, container, false);
-        ButterKnife.bind(this, rootView);
+
+        initView(rootView);
+        initData();
 
         return rootView;
     }
 
-    @OnClick(R.id.user_setting)
-    void gotoSettingActivity() {
-        Toast.makeText(getContext(), "Hellooooooooooooooooooooooooooooooooooooooooo", Toast.LENGTH_SHORT).show();
+    void initView(View rootView) {
+        userImage = (CircleImageView) rootView.findViewById(R.id.user_image);
+        userSetting = (ImageView) rootView.findViewById(R.id.user_setting);
+
+        tv1 = (TextView) rootView.findViewById(R.id.tv_1);
+        tv2 = (TextView) rootView.findViewById(R.id.tv_2);
+        tv3 = (TextView) rootView.findViewById(R.id.tv_3);
+        tv4 = (TextView) rootView.findViewById(R.id.tv_4);
+
+    }
+
+    void initData() {
+        userSetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "Hellooooooooooooooooooooooooooooooooooooooooo", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 }

@@ -4,12 +4,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * @author: zhuhuanhuan
@@ -20,7 +18,6 @@ import butterknife.ButterKnife;
  */
 public class MessageActivity extends AppCompatActivity {
 
-    @BindView(R.id.message_content)
     RecyclerView messageContent;
 
     MessageAdapter mMessageAdapter;
@@ -29,9 +26,13 @@ public class MessageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message);
-        ButterKnife.bind(this);
 
+        initView();
         initData();
+    }
+
+    void initView() {
+        messageContent = (RecyclerView) findViewById(R.id.message_content);
     }
 
     void initData() {

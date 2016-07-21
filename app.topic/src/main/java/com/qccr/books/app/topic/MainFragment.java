@@ -13,17 +13,12 @@ import android.widget.Button;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 /**
  * A simple {@link Fragment} subclass.
  */
 public class MainFragment extends Fragment {
 
-    @BindView(R.id.rv_guess)
     RecyclerView rvGuess;
-    @BindView(R.id.btn_change)
     Button btnChange;
 
     TopicHeaderAdapter topicHeaderAdapter;
@@ -38,11 +33,16 @@ public class MainFragment extends Fragment {
                              ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.activity_topic, container, false);
-        ButterKnife.bind(this, rootView);
 
+        initView(rootView);
         initData();
 
         return rootView;
+    }
+
+    void initView(View rootView) {
+        rvGuess = (RecyclerView) rootView.findViewById(R.id.rv_guess);
+        btnChange = (Button) rootView.findViewById(R.id.btn_change);
     }
 
     void initData() {

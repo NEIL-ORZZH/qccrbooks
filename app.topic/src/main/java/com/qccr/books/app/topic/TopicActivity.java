@@ -4,19 +4,15 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class TopicActivity extends AppCompatActivity {
 
-    @BindView(R.id.rv_guess)
     RecyclerView rvGuess;
-    @BindView(R.id.btn_change)
     Button btnChange;
 
     TopicHeaderAdapter topicHeaderAdapter;
@@ -25,9 +21,14 @@ public class TopicActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_topic);
-        ButterKnife.bind(this);
 
+        initView();
         initData();
+    }
+
+    void initView() {
+        rvGuess = (RecyclerView) findViewById(R.id.rv_guess);
+        btnChange = (Button) findViewById(R.id.btn_change);
     }
 
     void initData() {
