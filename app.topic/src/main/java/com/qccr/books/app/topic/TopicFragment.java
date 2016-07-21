@@ -16,14 +16,14 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MainFragment extends Fragment {
+public class TopicFragment extends Fragment {
 
     RecyclerView rvGuess;
     Button btnChange;
 
     TopicHeaderAdapter topicHeaderAdapter;
 
-    public MainFragment() {
+    public TopicFragment() {
         // Required empty public constructor
     }
 

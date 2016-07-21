@@ -15,13 +15,13 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MainFragment extends Fragment {
+public class MessageFragment extends Fragment {
 
     RecyclerView messageContent;
 
     MessageAdapter mMessageAdapter;
 
-    public MainFragment() {
+    public MessageFragment() {
         // Required empty public constructor
     }
 

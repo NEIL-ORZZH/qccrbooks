@@ -22,8 +22,8 @@ import me.majiajie.pagerbottomtabstrip.listener.OnTabItemSelectListener;
  * @desc:
  */
 public class MainActivity extends AppCompatActivity {
-    static final String[] sUris = new String[]{"topic", "user"};
-    static final String[] sTitles = new String[]{"Topic", "User"};
+    static final String[] sUris = new String[]{"topic/fragment", "message/fragment", "user/fragment"};
+    static final String[] sTitles = new String[]{"Topic", "Message", "User"};
     private static final String TAG = MainActivity.class.getName();
     private static final int PAGE_TOPIC = 0;
     private static final int PAGE_MESSAGE = 1;
