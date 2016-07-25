@@ -11,3 +11,8 @@
 * https://github.com/tyzlmjj/PagerBottomTabStrip
 * https://github.com/CymChad/BaseRecyclerViewAdapterHelper
 * https://github.com/JakeWharton/butterknife
+
+## 功能
+* 借书，还书
+* 关注技术内容
+* 评论
