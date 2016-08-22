@@ -7,15 +7,24 @@
     },
     {
       "uri": "topic",
-      "pkg": "com.qccr.books.app.topic"
+      "pkg": "com.qccr.books.app.topic",
+      "rules": {
+        "fragment": ".TopicFragment"
+      }
     },
     {
       "uri": "message",
-      "pkg": "com.qccr.books.app.message"
+      "pkg": "com.qccr.books.app.message",
+      "rules": {
+        "fragment": ".MessageFragment"
+      }
     },
     {
       "uri": "user",
-      "pkg": "com.qccr.books.app.user"
+      "pkg": "com.qccr.books.app.user",
+      "rules": {
+        "fragment": ".UserFragment"
+      }
     }
   ]
 }

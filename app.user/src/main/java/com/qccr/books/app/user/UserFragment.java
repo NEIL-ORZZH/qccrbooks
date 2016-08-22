@@ -15,7 +15,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MainFragment extends Fragment {
+public class UserFragment extends Fragment {
 
 
     CircleImageView userImage;
@@ -25,7 +25,7 @@ public class MainFragment extends Fragment {
     TextView tv3;
     TextView tv4;
 
-    public MainFragment() {
+    public UserFragment() {
         // Required empty public constructor
     }
 
