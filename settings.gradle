@@ -1,1 +1,1 @@
-include ':app', ':app.main', ':app.user', ':app.topic', ':app.message'
+include ':app', ':app.main', ':app.user', ':app.topic', ':app.message', 'lib.utils'
