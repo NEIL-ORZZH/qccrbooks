@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.qccr.lib.utils.CaptureActivity;
+import com.qccr.lib.utils.zbar.CaptureActivity;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 

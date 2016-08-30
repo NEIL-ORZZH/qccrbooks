@@ -13,7 +13,7 @@
         android:supportsRtl="true">
 
         <activity
-            android:name=".CaptureActivity"
+            android:name=".zbar.CaptureActivity"
             android:screenOrientation="portrait" />
 
     </application>

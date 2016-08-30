@@ -18,6 +18,7 @@
 * https://github.com/CymChad/BaseRecyclerViewAdapterHelper
 * https://github.com/JakeWharton/butterknife
 * https://github.com/JeasonWong/JikeGallery
+* https://github.com/SkillCollege/ZBarAndroidSDK
 
 ## 功能
 * 借书，还书
