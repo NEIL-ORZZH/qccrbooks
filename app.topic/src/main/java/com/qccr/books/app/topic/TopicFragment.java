@@ -41,7 +41,7 @@ public class TopicFragment extends Fragment {
 
     Button btnChange;
 
-    List<GalleryView> mGalleryList = new ArrayList<>();
+    List<GalleryView> mGalleryList;
 
     public TopicFragment() {
     }
@@ -60,7 +60,7 @@ public class TopicFragment extends Fragment {
     }
 
     void initView(View rootView) {
-
+        mGalleryList = new ArrayList<>();
         mGalleryList.add((GalleryView) rootView.findViewById(R.id.gallery0));
         mGalleryList.add((GalleryView) rootView.findViewById(R.id.gallery1));
         mGalleryList.add((GalleryView) rootView.findViewById(R.id.gallery2));
