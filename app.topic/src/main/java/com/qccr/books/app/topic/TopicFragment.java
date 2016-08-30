@@ -3,8 +3,6 @@ package com.qccr.books.app.topic;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,18 +11,39 @@ import android.widget.Button;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.wangyuwei.galleryview.GalleryEntity;
+import me.wangyuwei.galleryview.GalleryView;
+
 /**
  * A simple {@link Fragment} subclass.
  */
 public class TopicFragment extends Fragment {
 
-    RecyclerView rvGuess;
+    String[] mImgs = new String[]{"http://awb.img1.xmtbang.com/wechatmsg2015/article201505/20150525/thumb/9b65bb01da504a12807f50324fe01e3b.jpg",
+            "http://cdn.ruguoapp.com/o_1ae1a3qhbdfe1c9sal2a67u6st.jpg?imageView2/0/w/300/h/300/interlace/1",
+            "http://img4.imgtn.bdimg.com/it/u=665141257,1340555319&fm=21&gp=0.jpg",
+            "http://cdn.ruguoapp.com/o_1a94vr1vfj1b1tvmaol1itc15u2ba.jpeg?imageView2/0/w/300/h/300/interlace/1",
+            "http://cdn.ruguoapp.com/o_1a9501o0l14ir1lmk1de8jboisj37.jpeg?imageView2/0/w/300/h/300/interlace/1",
+            "http://cdn.ruguoapp.com/o_1ae1a3qhbdfe1c9sal2a67u6st.jpg?imageView2/0/w/300/h/300/interlace/1",
+            "http://img4.imgtn.bdimg.com/it/u=665141257,1340555319&fm=21&gp=0.jpg",
+            "http://awb.img1.xmtbang.com/wechatmsg2015/article201505/20150525/thumb/9b65bb01da504a12807f50324fe01e3b.jpg",
+            "http://cdn.ruguoapp.com/o_1a9501o0l14ir1lmk1de8jboisj37.jpeg?imageView2/0/w/300/h/300/interlace/1"};
+
+    String[] mTitles = new String[]{"这是一个简单的测试",
+            "必有小新",
+            "Tracy McGrady",
+            "吃货不孤单",
+            "蝉游记精选",
+            "马云最新演讲和言论",
+            "Tracy McGrady",
+            "这是一个简单的测试",
+            "蝉游记精选"};
+
     Button btnChange;
 
-    TopicHeaderAdapter topicHeaderAdapter;
+    List<GalleryView> mGalleryList = new ArrayList<>();
 
     public TopicFragment() {
-        // Required empty public constructor
     }
 
 
@@ -41,33 +60,77 @@ public class TopicFragment extends Fragment {
     }
 
     void initView(View rootView) {
-        rvGuess = (RecyclerView) rootView.findViewById(R.id.rv_guess);
-        btnChange = (Button) rootView.findViewById(R.id.btn_change);
+
+        mGalleryList.add((GalleryView) rootView.findViewById(R.id.gallery0));
+        mGalleryList.add((GalleryView) rootView.findViewById(R.id.gallery1));
+        mGalleryList.add((GalleryView) rootView.findViewById(R.id.gallery2));
+        btnChange = (Button) rootView.findViewById(R.id.btn_refresh);
+
+        btnChange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startSmooth();
+            }
+        });
     }
 
     void initData() {
-        List<TopicHeader> headers = new ArrayList<>();
+        for (int i = 0; i < mGalleryList.size(); i++) {
+            mGalleryList.get(i).addGalleryData(refreshGallerViewData(i * 3));
+        }
+//        List<TopicHeader> headers = new ArrayList<>();
+//
+//        TopicHeader header = new TopicHeader();
+//        header.intro = "吃货不孤单";
+//        header.name = "吃货不孤单";
+//        header.picUrl = "http://cdn.ruguoapp.com/o_1a94vr1vfj1b1tvmaol1itc15u2ba.jpeg?imageView2/0/w/300/h/300/interlace/1";
+//        headers.add(header);
+//
+//        TopicHeader header1 = new TopicHeader();
+//        header1.intro = "蝉游记精选";
+//        header1.name = "蝉游记精选";
+//        header1.picUrl = "http://cdn.ruguoapp.com/o_1a9501o0l14ir1lmk1de8jboisj37.jpeg?imageView2/0/w/300/h/300/interlace/1";
+//        headers.add(header1);
+//
+//        TopicHeader header2 = new TopicHeader();
+//        header2.intro = "马云最新演讲和言论";
+//        header2.name = "马云最新演讲和言论";
+//        header2.picUrl = "http://cdn.ruguoapp.com/o_1ae1a3qhbdfe1c9sal2a67u6st.jpg?imageView2/0/w/300/h/300/interlace/1";
+//        headers.add(header2);
 
-        TopicHeader header = new TopicHeader();
-        header.intro = "吃货不孤单";
-        header.name = "吃货不孤单";
-        header.picUrl = "http://cdn.ruguoapp.com/o_1a94vr1vfj1b1tvmaol1itc15u2ba.jpeg?imageView2/0/w/300/h/300/interlace/1";
-        headers.add(header);
+    }
 
-        TopicHeader header1 = new TopicHeader();
-        header1.intro = "蝉游记精选";
-        header1.name = "蝉游记精选";
-        header1.picUrl = "http://cdn.ruguoapp.com/o_1a9501o0l14ir1lmk1de8jboisj37.jpeg?imageView2/0/w/300/h/300/interlace/1";
-        headers.add(header1);
+    private List<GalleryEntity> refreshGallerViewData(int index) {
+        List<GalleryEntity> result = new ArrayList<>();
 
-        TopicHeader header2 = new TopicHeader();
-        header2.intro = "马云最新演讲和言论";
-        header2.name = "马云最新演讲和言论";
-        header2.picUrl = "http://cdn.ruguoapp.com/o_1ae1a3qhbdfe1c9sal2a67u6st.jpg?imageView2/0/w/300/h/300/interlace/1";
-        headers.add(header2);
+        GalleryEntity entity0 = new GalleryEntity();
+        entity0.imgUrl = mImgs[0 + index];
+        entity0.title = mTitles[0 + index];
+        result.add(entity0);
 
-        topicHeaderAdapter = new TopicHeaderAdapter(headers);
-        rvGuess.setLayoutManager(new GridLayoutManager(getContext(), 3));
-        rvGuess.setAdapter(topicHeaderAdapter);
+        GalleryEntity entity1 = new GalleryEntity();
+        entity1.imgUrl = mImgs[1 + index];
+        entity1.title = mTitles[1 + index];
+        result.add(entity1);
+
+        GalleryEntity entity2 = new GalleryEntity();
+        entity2.imgUrl = mImgs[2 + index];
+        entity2.title = mTitles[2 + index];
+        result.add(entity2);
+
+        return result;
+    }
+
+    private void startSmooth() {
+        for (int i = 0; i < mGalleryList.size(); i++) {
+            final int index = i;
+            mGalleryList.get(i).postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mGalleryList.get(index).startSmooth();
+                }
+            }, 100 * i);
+        }
+
     }
 }

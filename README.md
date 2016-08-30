@@ -11,6 +11,7 @@
 * https://github.com/tyzlmjj/PagerBottomTabStrip
 * https://github.com/CymChad/BaseRecyclerViewAdapterHelper
 * https://github.com/JakeWharton/butterknife
+* https://github.com/JeasonWong/JikeGallery
 
 ## 功能
 * 借书，还书
