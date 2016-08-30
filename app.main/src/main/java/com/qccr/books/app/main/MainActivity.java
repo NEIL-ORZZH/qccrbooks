@@ -2,13 +2,14 @@ package com.qccr.books.app.main;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import net.wequick.small.Small;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import me.majiajie.pagerbottomtabstrip.Controller;
 import me.majiajie.pagerbottomtabstrip.PagerBottomTabLayout;
@@ -22,18 +23,11 @@ import me.majiajie.pagerbottomtabstrip.listener.OnTabItemSelectListener;
  * @desc:
  */
 public class MainActivity extends AppCompatActivity {
-    static final String[] sUris = new String[]{"topic/fragment", "message/fragment", "user/fragment"};
-    static final String[] sTitles = new String[]{"Topic", "Message", "User"};
     private static final String TAG = MainActivity.class.getName();
-    private static final int PAGE_TOPIC = 0;
-    private static final int PAGE_MESSAGE = 1;
-    private static final int PAGE_USER = 2;
 
     PagerBottomTabLayout mTab;
-    ViewPager vpContainer;
-
+    List<Fragment> mFragments;
     Controller mController;
-    SectionsPagerAdapter mSectionsPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void initView() {
-        vpContainer = (ViewPager) findViewById(R.id.vp_container);
         mTab = (PagerBottomTabLayout) findViewById(R.id.tab);
 
         mController = mTab.builder()
@@ -56,24 +49,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void initData() {
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-
-        vpContainer.setAdapter(mSectionsPagerAdapter);
+        initFragments();
 
         mController.addTabItemClickListener(new OnTabItemSelectListener() {
 
             @Override
             public void onSelected(int index, Object tag) {
-                switch (index) {
-                    case PAGE_TOPIC:
-                        break;
-                    case PAGE_MESSAGE:
-                        break;
-                    case PAGE_USER:
-                        break;
-                    default:
-                        break;
-                }
+                Log.i(TAG, "onSelected:" + index + "   TAG: " + tag.toString());
+
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frameLayout, mFragments.get(index));
+                transaction.commit();
             }
 
             @Override
@@ -81,33 +67,18 @@ public class MainActivity extends AppCompatActivity {
                 Log.i(TAG, "onRepeatClick:" + index + "   TAG: " + tag.toString());
             }
         });
+
     }
 
+    void initFragments() {
+        mFragments = new ArrayList<>();
+        mFragments.add((Fragment) Small.createObject("fragment-v4", "topic/fragment", MainActivity.this));
+        mFragments.add((Fragment) Small.createObject("fragment-v4", "message/fragment", MainActivity.this));
+        mFragments.add((Fragment) Small.createObject("fragment-v4", "user/fragment", MainActivity.this));
 
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
-
-        public SectionsPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            Fragment fragment = Small.createObject("fragment-v4", sUris[position], MainActivity.this);
-
-            return fragment;
-        }
-
-        @Override
-        public int getCount() {
-            return sTitles.length;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return sTitles[position];
-        }
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.add(R.id.frameLayout, mFragments.get(0));
+        transaction.commit();
     }
 
 }
