@@ -3,6 +3,9 @@
 * group: twl_android
 * time: 2016/07/18
 
+## 说明
+* 本项目都是copy即刻app ui,如果遇到涉及版权啥的,立删
+
 ## 参考资料
 * https://github.com/wequick/Small，请到这个地址仔细阅读
 
