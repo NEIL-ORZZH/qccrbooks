@@ -1,71 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.qccr.books.app.user.UserActivity">
 
-    <include layout="@layout/user_header" />
-
-    <TextView
-        android:id="@+id/tv_1"
+    <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:drawableStart="@mipmap/ic_my_theme"
-        android:gravity="center_vertical"
-        android:text="    我的主题"
-        android:textSize="15sp" />
+        android:layout_height="match_parent" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/fengexian" />
-
-    <TextView
-        android:id="@+id/tv_2"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:drawableStart="@mipmap/ic_my_favorite"
-        android:gravity="center_vertical"
-        android:text="    我喜欢的"
-        android:textSize="15sp" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/fengexian" />
-
-    <TextView
-        android:id="@+id/tv_3"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:drawableStart="@mipmap/ic_my_notification"
-        android:gravity="center_vertical"
-        android:text="    动态通知"
-        android:textSize="15sp" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/fengexian" />
-
-    <TextView
-        android:id="@+id/tv_4"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:drawableStart="@mipmap/ic_my_secretary"
-        android:gravity="center_vertical"
-        android:text="    小秘书"
-        android:textSize="15sp" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/fengexian" />
-
-</LinearLayout>
+</RelativeLayout>

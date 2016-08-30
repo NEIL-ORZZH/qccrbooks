@@ -6,6 +6,9 @@
 ## 说明
 * 本项目都是copy即刻app ui,如果遇到涉及版权啥的,立删
 
+## 项目说明
+* 先不要引入butterknife,先前遇到问题,移除了
+
 ## 参考资料
 * https://github.com/wequick/Small，请到这个地址仔细阅读
 

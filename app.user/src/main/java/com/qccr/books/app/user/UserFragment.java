@@ -1,6 +1,7 @@
 package com.qccr.books.app.user;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.qccr.lib.utils.CaptureActivity;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
@@ -17,13 +20,12 @@ import de.hdodenhof.circleimageview.CircleImageView;
  */
 public class UserFragment extends Fragment {
 
-
     CircleImageView userImage;
     ImageView userSetting;
-    TextView tv1;
-    TextView tv2;
-    TextView tv3;
-    TextView tv4;
+    TextView tvMyTheme;
+    TextView tvMyLove;
+    TextView tvNotification;
+    TextView tvSecretary;
 
     public UserFragment() {
         // Required empty public constructor
@@ -35,7 +37,7 @@ public class UserFragment extends Fragment {
                              ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.activity_user, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_user, container, false);
 
         initView(rootView);
         initData();
@@ -47,10 +49,17 @@ public class UserFragment extends Fragment {
         userImage = (CircleImageView) rootView.findViewById(R.id.user_image);
         userSetting = (ImageView) rootView.findViewById(R.id.user_setting);
 
-        tv1 = (TextView) rootView.findViewById(R.id.tv_1);
-        tv2 = (TextView) rootView.findViewById(R.id.tv_2);
-        tv3 = (TextView) rootView.findViewById(R.id.tv_3);
-        tv4 = (TextView) rootView.findViewById(R.id.tv_4);
+        tvMyTheme = (TextView) rootView.findViewById(R.id.tv_mytheme);
+        tvMyLove = (TextView) rootView.findViewById(R.id.tv_mylove);
+        tvNotification = (TextView) rootView.findViewById(R.id.tv_notification);
+        tvSecretary = (TextView) rootView.findViewById(R.id.tv_secretary);
+
+        tvSecretary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), CaptureActivity.class));
+            }
+        });
 
     }
 
