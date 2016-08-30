@@ -21,6 +21,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.qccr.lib.utils.R;
+import com.qccr.lib.utils.rxbus.RxBus;
 
 import net.sourceforge.zbar.Config;
 import net.sourceforge.zbar.Image;
@@ -97,6 +98,9 @@ public class CaptureActivity extends AppCompatActivity {
 
                 scanResult.setText("barcode result " + resultStr);
                 barcodeScanned = true;
+
+                RxBus.getDefault().send(resultStr);
+                finish();
             }
         }
     };

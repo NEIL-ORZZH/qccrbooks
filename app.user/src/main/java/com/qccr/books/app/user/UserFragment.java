@@ -11,9 +11,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.qccr.lib.utils.rxbus.RxBus;
 import com.qccr.lib.utils.zbar.CaptureActivity;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import rx.functions.Action1;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -43,6 +45,20 @@ public class UserFragment extends Fragment {
         initData();
 
         return rootView;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        RxBus.getDefault().toObservable().subscribe(new Action1<Object>() {
+            @Override
+            public void call(Object event) {
+                if (event instanceof String) {
+                    Toast.makeText(getContext(), "scan code:" + event, Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
     void initView(View rootView) {
