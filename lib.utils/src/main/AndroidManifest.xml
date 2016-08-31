@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.qccr.lib.utils">
+    package="com.qccr.books.lib.utils">
 
 
     <uses-permission android:name="android.permission.CAMERA" />
@@ -13,7 +13,7 @@
         android:supportsRtl="true">
 
         <activity
-            android:name="com.qccr.books.lib.utils.zbar.CaptureActivity"
+            android:name=".zbar.CaptureActivity"
             android:screenOrientation="portrait" />
 
     </application>
