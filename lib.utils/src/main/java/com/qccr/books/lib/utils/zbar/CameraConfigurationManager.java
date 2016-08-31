@@ -1,4 +1,4 @@
-package com.qccr.lib.utils.zbar;
+package com.qccr.books.lib.utils.zbar;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

@@ -1,4 +1,4 @@
-package com.qccr.lib.utils.zbar;
+package com.qccr.books.lib.utils.zbar;
 
 import android.content.pm.ActivityInfo;
 import android.graphics.Rect;
@@ -21,7 +21,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.qccr.lib.utils.R;
-import com.qccr.lib.utils.rxbus.RxBus;
+import com.qccr.books.lib.utils.rxbus.RxBus;
 
 import net.sourceforge.zbar.Config;
 import net.sourceforge.zbar.Image;

@@ -11,11 +11,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.qccr.lib.utils.rxbus.RxBus;
-import com.qccr.lib.utils.zbar.CaptureActivity;
+import com.qccr.books.lib.utils.rxbus.RxBus;
+import com.qccr.books.lib.utils.zbar.CaptureActivity;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import rx.functions.Action1;
+
+import static java.security.AccessController.getContext;
 
 /**
  * A simple {@link Fragment} subclass.

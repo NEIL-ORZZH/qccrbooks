@@ -1,4 +1,4 @@
-package com.qccr.lib.utils.rxbus;
+package com.qccr.books.lib.utils.rxbus;
 
 import rx.Observable;
 import rx.subjects.PublishSubject;
