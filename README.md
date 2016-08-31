@@ -19,6 +19,8 @@
 * https://github.com/JakeWharton/butterknife
 * https://github.com/JeasonWong/JikeGallery
 * https://github.com/SkillCollege/ZBarAndroidSDK
+* https://github.com/AndroidKnife/RxBus
+* https://github.com/f2prateek/rx-preferences
 
 ## 功能
 * 借书，还书
