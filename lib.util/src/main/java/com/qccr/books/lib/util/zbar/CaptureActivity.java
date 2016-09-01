@@ -47,9 +47,7 @@ public class CaptureActivity extends Activity {
     private CameraPreview mPreview;
     private Handler autoFocusHandler;
     private CameraManager mCameraManager;
-    private TextView scanResult;
     private FrameLayout scanPreview;
-    private Button scanRestart;
     private RelativeLayout scanContainer;
     private RelativeLayout scanCropView;
     private ImageView scanLine;
@@ -96,7 +94,6 @@ public class CaptureActivity extends Activity {
                 mCamera.setPreviewCallback(null);
                 mCamera.stopPreview();
 
-                scanResult.setText("barcode result " + resultStr);
                 barcodeScanned = true;
 
                 RxBus.getDefault().send(resultStr);
@@ -122,34 +119,15 @@ public class CaptureActivity extends Activity {
         setContentView(R.layout.activity_capture);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         findViewById();
-        addEvents();
         initViews();
     }
 
     private void findViewById() {
         scanPreview = (FrameLayout) findViewById(R.id.capture_preview);
-        scanResult = (TextView) findViewById(R.id.capture_scan_result);
-        scanRestart = (Button) findViewById(R.id.capture_restart_scan);
         scanContainer = (RelativeLayout) findViewById(R.id.capture_container);
         scanCropView = (RelativeLayout) findViewById(R.id.capture_crop_view);
         scanLine = (ImageView) findViewById(R.id.capture_scan_line);
     }
-
-    private void addEvents() {
-        scanRestart.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                if (barcodeScanned) {
-                    barcodeScanned = false;
-                    scanResult.setText("Scanning...");
-                    mCamera.setPreviewCallback(previewCb);
-                    mCamera.startPreview();
-                    previewing = true;
-                    mCamera.autoFocus(autoFocusCB);
-                }
-            }
-        });
-    }
-
     private void initViews() {
         mImageScanner = new ImageScanner();
         mImageScanner.setConfig(0, Config.X_DENSITY, 3);

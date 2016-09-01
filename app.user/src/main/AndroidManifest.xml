@@ -25,6 +25,7 @@
         </activity>
 
         <activity
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:name="com.qccr.books.lib.util.zbar.CaptureActivity"
             android:screenOrientation="portrait" />
     </application>
