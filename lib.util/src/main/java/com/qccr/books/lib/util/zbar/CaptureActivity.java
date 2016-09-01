@@ -1,5 +1,6 @@
 package com.qccr.books.lib.util.zbar;
 
+import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.graphics.Rect;
 import android.hardware.Camera;
@@ -8,7 +9,6 @@ import android.hardware.Camera.PreviewCallback;
 import android.hardware.Camera.Size;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,8 +20,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.qccr.books.lib.util.rxbus.RxBus;
 import com.qccr.books.lib.util.R;
+import com.qccr.books.lib.util.rxbus.RxBus;
 
 import net.sourceforge.zbar.Config;
 import net.sourceforge.zbar.Image;
@@ -37,7 +37,7 @@ import java.lang.reflect.Field;
  * <p>
  * 作者: 强迫症患者
  */
-public class CaptureActivity extends AppCompatActivity {
+public class CaptureActivity extends Activity {
 
     static {
         System.loadLibrary("iconv");
