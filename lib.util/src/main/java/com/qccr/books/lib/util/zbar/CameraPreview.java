@@ -1,4 +1,4 @@
-package com.qccr.books.lib.utils.zbar;
+package com.qccr.books.lib.util.zbar;
 
 import android.content.Context;
 import android.hardware.Camera;

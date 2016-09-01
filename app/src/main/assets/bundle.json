@@ -25,6 +25,10 @@
       "rules": {
         "fragment": ".UserFragment"
       }
+    },
+    {
+      "uri": "lib.util",
+      "pkg": "com.qccr.books.lib.util"
     }
   ]
 }
