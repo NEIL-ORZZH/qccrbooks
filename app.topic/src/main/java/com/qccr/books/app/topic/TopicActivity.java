@@ -1,14 +1,9 @@
 package com.qccr.books.app.topic;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.widget.Button;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class TopicActivity extends AppCompatActivity {
 
@@ -21,7 +16,13 @@ public class TopicActivity extends AppCompatActivity {
         initData();
     }
 
+
     void initView() {
+        Fragment topicFragment = new TopicFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.add(R.id.frameLayout, topicFragment);
+        transaction.commit();
+
     }
 
     void initData() {

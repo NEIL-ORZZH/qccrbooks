@@ -31,7 +31,7 @@ public class MessageFragment extends Fragment {
                              ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.activity_message, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_message, container, false);
         initView(rootView);
         initData();
 
