@@ -39,7 +39,6 @@ final class SearchPresenter {
         Observable.zip(MeiZhiFactory.getGankIOSingleton().getMeizhiData(mPage), MeiZhiFactory.getGankIOSingleton().getVideoData(mPage), new Func2<MeizhiData, VideoData, MeizhiData>() {
             @Override
             public MeizhiData call(MeizhiData meizhiData, VideoData videoData) {
-                Log.e(TAG, "call: " + Thread.currentThread().getName());
                 for (Meizhi meizhi : meizhiData.results) {
                     meizhi.desc = meizhi.desc + " " + getFirstVideoDesc(meizhi.publishedAt, videoData.results);
                 }

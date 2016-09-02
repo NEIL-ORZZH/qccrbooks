@@ -21,6 +21,12 @@
 * https://github.com/SkillCollege/ZBarAndroidSDK
 * https://github.com/AndroidKnife/RxBus
 * https://github.com/f2prateek/rx-preferences
+* https://github.com/dlew/joda-time-android
+* https://github.com/bumptech/glide
+* http://gank.io/api
+* https://github.com/drakeet/Meizhi
+* https://github.com/square/retrofit
+
 
 ## 功能
 * 借书，还书
