@@ -4,6 +4,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.like.LikeButton;
@@ -47,7 +48,10 @@ public class MessageAdapter extends BaseQuickAdapter<Message> {
         });
 
 
-        Glide.with(mContext).load(message.titlePic).into((ImageView) baseViewHolder.getView(R.id.iv_title_pic));
+        Glide.with(mContext)
+                .load(message.titlePic)
+                .diskCacheStrategy(DiskCacheStrategy.SOURCE)
+                .into((ImageView) baseViewHolder.getView(R.id.iv_title_pic));
 
 
     }

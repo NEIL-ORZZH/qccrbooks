@@ -27,6 +27,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.target.SizeReadyCallback;
 import com.qccr.books.app.user.R;
 import com.qccr.books.app.user.search.modle.Meizhi;
@@ -77,6 +78,7 @@ public class MeizhiListAdapter
         Glide.with(mContext)
                 .load(meizhi.url)
                 .centerCrop()
+                .diskCacheStrategy(DiskCacheStrategy.SOURCE)
                 .into(viewHolder.meizhiView)
                 .getSize(new SizeReadyCallback() {
 

@@ -3,6 +3,7 @@ package com.qccr.books.app.topic;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
@@ -26,6 +27,9 @@ public class TopicHeaderAdapter extends BaseQuickAdapter<TopicHeader> {
         baseViewHolder.setText(R.id.tv_banner_name, topicHeader.name)
                 .setText(R.id.tv_banner_intro, topicHeader.intro);
 
-        Glide.with(mContext).load(topicHeader.picUrl).into((ImageView) baseViewHolder.getView(R.id.iv_banner_picture));
+        Glide.with(mContext)
+                .load(topicHeader.picUrl)
+                .diskCacheStrategy(DiskCacheStrategy.SOURCE)
+                .into((ImageView) baseViewHolder.getView(R.id.iv_banner_picture));
     }
 }

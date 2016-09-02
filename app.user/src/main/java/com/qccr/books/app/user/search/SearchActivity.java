@@ -2,12 +2,15 @@ package com.qccr.books.app.user.search;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -24,6 +27,7 @@ import butterknife.ButterKnife;
 
 public class SearchActivity extends Activity implements SearchView {
 
+    private static final String TAG = "SearchActivity";
     private static final int PRELOAD_SIZE = 6;
 
     @Bind(R.id.rv_meizhi)
@@ -54,10 +58,29 @@ public class SearchActivity extends Activity implements SearchView {
         rvMeizhi.setLayoutManager(layoutManager);
 
         rvMeizhi.addOnScrollListener(getOnBottomListener(layoutManager));
+
+        mSwipeRefreshLayout.setColorSchemeColors(Color.BLUE,
+                Color.GREEN,
+                Color.YELLOW,
+                Color.RED);
+
+        // 设置手指在屏幕下拉多少距离会触发下拉刷新
+        mSwipeRefreshLayout.setDistanceToTriggerSync(300);
+        // 设定下拉圆圈的背景
+        mSwipeRefreshLayout.setProgressBackgroundColorSchemeColor(Color.WHITE);
+        // 设置圆圈的大小
+        mSwipeRefreshLayout.setSize(SwipeRefreshLayout.LARGE);
+
+        //设置下拉刷新的监听
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                Log.e(TAG, "onRefresh: ");
+            }
+        });
     }
 
     void initData() {
-
         mPresenter = new SearchPresenter(this);
         mPresenter.loadData();
 
