@@ -21,9 +21,13 @@ import com.qccr.books.app.user.search.widget.MultiSwipeRefreshLayout;
 import net.danlew.android.joda.JodaTimeAndroid;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
 
 public class SearchActivity extends Activity implements SearchView {
 
@@ -59,6 +63,10 @@ public class SearchActivity extends Activity implements SearchView {
 
         rvMeizhi.addOnScrollListener(getOnBottomListener(layoutManager));
 
+        initSwipeRefreshLayout();
+    }
+
+    private void initSwipeRefreshLayout() {
         mSwipeRefreshLayout.setColorSchemeColors(Color.BLUE,
                 Color.GREEN,
                 Color.YELLOW,
@@ -76,6 +84,14 @@ public class SearchActivity extends Activity implements SearchView {
             @Override
             public void onRefresh() {
                 Log.e(TAG, "onRefresh: ");
+                Observable.timer(2, TimeUnit.SECONDS)
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(new Action1<Long>() {
+                            @Override
+                            public void call(Long s) {
+                                mSwipeRefreshLayout.setRefreshing(false);
+                            }
+                        });
             }
         });
     }
