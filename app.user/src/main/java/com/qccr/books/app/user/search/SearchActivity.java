@@ -14,6 +14,8 @@ import android.widget.Toast;
 import com.qccr.books.app.user.R;
 import com.qccr.books.app.user.search.widget.MultiSwipeRefreshLayout;
 
+import net.danlew.android.joda.JodaTimeAndroid;
+
 import java.util.List;
 
 import butterknife.Bind;
@@ -54,8 +56,11 @@ public class SearchActivity extends Activity implements SearchView {
     }
 
     void initData() {
+
         mPresenter = new SearchPresenter(this);
         mPresenter.loadData();
+
+        JodaTimeAndroid.init(getApplicationContext());
 
     }
 

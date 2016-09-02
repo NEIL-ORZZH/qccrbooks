@@ -4,6 +4,8 @@ import android.util.Log;
 
 import com.qccr.books.app.user.Gank;
 
+import org.joda.time.DateTime;
+
 import java.util.Date;
 import java.util.List;
 
@@ -25,7 +27,6 @@ final class SearchPresenter {
 
     SearchView mView;
     int mPage = 0;
-    int mLastVideoIndex = 0;
 
     public SearchPresenter(SearchView view) {
         mView = view;
@@ -40,8 +41,7 @@ final class SearchPresenter {
             public MeizhiData call(MeizhiData meizhiData, VideoData videoData) {
                 Log.e(TAG, "call: " + Thread.currentThread().getName());
                 for (Meizhi meizhi : meizhiData.results) {
-                    meizhi.desc = meizhi.desc + " " +
-                            getFirstVideoDesc(meizhi.publishedAt, videoData.results);
+                    meizhi.desc = meizhi.desc + " " + getFirstVideoDesc(meizhi.publishedAt, videoData.results);
                 }
 
                 return meizhiData;
@@ -52,7 +52,7 @@ final class SearchPresenter {
                 .subscribe(new Subscriber<MeizhiData>() {
                     @Override
                     public void onCompleted() {
-                        Log.d(TAG, "onCompleted: ");
+
                     }
 
                     @Override
@@ -62,8 +62,6 @@ final class SearchPresenter {
 
                     @Override
                     public void onNext(MeizhiData meizhiData) {
-                        Log.e(TAG, "onnext: " + Thread.currentThread().getName());
-
                         mView.loadDataSuccess(meizhiData.results);
                     }
                 });
@@ -71,17 +69,16 @@ final class SearchPresenter {
     }
 
     private String getFirstVideoDesc(Date publishedAt, List<Gank> results) {
-        String videoDesc = "";
-        for (int i = mLastVideoIndex; i < results.size(); i++) {
-            Gank video = results.get(i);
-            if (video.publishedAt == null) video.publishedAt = video.createdAt;
-            if (Dates.isTheSameDay(publishedAt, video.publishedAt)) {
-                videoDesc = video.desc;
-                mLastVideoIndex = i;
-                break;
+        DateTime meizhi = new DateTime(publishedAt);
+        for (Gank gank : results) {
+            if (gank.publishedAt == null) gank.publishedAt = gank.createdAt;
+            DateTime hanzi = new DateTime(gank.publishedAt);
+            if (hanzi.dayOfYear().get() == meizhi.dayOfYear().get()) {
+                return gank.desc;
             }
         }
-        return videoDesc;
+
+        return "呵呵哒";
     }
 
 
