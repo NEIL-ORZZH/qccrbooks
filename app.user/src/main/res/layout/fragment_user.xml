@@ -68,4 +68,19 @@
         android:layout_height="1dp"
         android:background="@color/fengexian" />
 
+    <TextView
+        android:id="@+id/tv_fuli"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:drawableStart="@mipmap/ic_my_secretary"
+        android:gravity="center_vertical"
+        android:text="    福利"
+        android:textSize="15sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/fengexian" />
+
 </LinearLayout>

@@ -6,4 +6,7 @@
 
     <color name="black_overlay">#66000000</color>
     <color name="fengexian">#8F8F8F</color>
+
+    <color name="md_black_1000">#000000</color>
+
 </resources>

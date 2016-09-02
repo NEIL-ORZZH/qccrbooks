@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.qccr.books.app.user.search.SearchActivity;
 import com.qccr.books.lib.util.rxbus.RxBus;
 import com.qccr.books.lib.util.zbar.CaptureActivity;
 
@@ -28,6 +29,7 @@ public class UserFragment extends Fragment {
     TextView tvMyLove;
     TextView tvNotification;
     TextView tvSecretary;
+    TextView tvFuLi;
 
     public UserFragment() {
         // Required empty public constructor
@@ -69,6 +71,7 @@ public class UserFragment extends Fragment {
         tvMyLove = (TextView) rootView.findViewById(R.id.tv_mylove);
         tvNotification = (TextView) rootView.findViewById(R.id.tv_notification);
         tvSecretary = (TextView) rootView.findViewById(R.id.tv_secretary);
+        tvFuLi = (TextView) rootView.findViewById(R.id.tv_fuli);
 
         tvSecretary.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,13 +80,19 @@ public class UserFragment extends Fragment {
             }
         });
 
+        tvFuLi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), SearchActivity.class));
+            }
+        });
     }
 
     void initData() {
         userSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "Hellooooooooooooooooooooooooooooooooooooooooo", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getContext(), SearchActivity.class));
             }
         });
     }
