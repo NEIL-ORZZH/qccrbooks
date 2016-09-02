@@ -17,28 +17,34 @@
  * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.qccr.books.app.user.search;
+package com.qccr.books.app.user;
 
+import com.litesuits.orm.db.annotation.Column;
+import com.litesuits.orm.db.annotation.Table;
+import com.qccr.books.app.user.search.Soul;
 
-import retrofit2.http.GET;
-import retrofit2.http.Path;
-import rx.Observable;
+import java.util.Date;
 
 /**
- * Created by drakeet on 8/9/15.
+ * Created by drakeet on 8/11/15.
  */
-public interface GankApi {
+@Table("ganks")
+public class Gank extends Soul {
 
-    @GET("data/福利/" + MeiZhiFactory.MeiZhiSize + "/{page}")
-    Observable<MeizhiData> getMeizhiData(@Path("page") int page);
-
-//    @GET("/day/{year}/{month}/{day}")
-//    Observable<GankData> getGankData(
-//            @Path("year") int year,
-//            @Path("month") int month,
-//            @Path("day") int day);
-//
-@GET("data/休息视频/" + MeiZhiFactory.MeiZhiSize + "/{page}")
-Observable<VideoData> getVideoData(@Path("page") int page);
-
+    @Column("url")
+    public String url;
+    @Column("type")
+    public String type;
+    @Column("desc")
+    public String desc;
+    @Column("who")
+    public String who;
+    @Column("used")
+    public boolean used;
+    @Column("createdAt")
+    public Date createdAt;
+    @Column("updatedAt")
+    public Date updatedAt;
+    @Column("publishedAt")
+    public Date publishedAt;
 }

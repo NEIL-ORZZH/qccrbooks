@@ -19,26 +19,17 @@
 
 package com.qccr.books.app.user.search;
 
+import com.qccr.books.app.user.Gank;
 
-import retrofit2.http.GET;
-import retrofit2.http.Path;
-import rx.Observable;
+import java.util.List;
 
 /**
- * Created by drakeet on 8/9/15.
+ * 中文名是故意的，请勿吐槽[笑哭]
+ * Created by drakeet on 8/15/15.
  */
-public interface GankApi {
+public class VideoData {
 
-    @GET("data/福利/" + MeiZhiFactory.MeiZhiSize + "/{page}")
-    Observable<MeizhiData> getMeizhiData(@Path("page") int page);
+    public boolean error;
 
-//    @GET("/day/{year}/{month}/{day}")
-//    Observable<GankData> getGankData(
-//            @Path("year") int year,
-//            @Path("month") int month,
-//            @Path("day") int day);
-//
-@GET("data/休息视频/" + MeiZhiFactory.MeiZhiSize + "/{page}")
-Observable<VideoData> getVideoData(@Path("page") int page);
-
+    public List<Gank> results;
 }
