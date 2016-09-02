@@ -108,15 +108,22 @@ public class SearchActivity extends Activity implements SearchView {
 
     @Override
     public void loadDataSuccess(List<Meizhi> meizhis) {
-        mMeizhiListAdapter = new MeizhiListAdapter(this, meizhis);
-        mMeizhiListAdapter.setOnMeizhiTouchListener(getOnMeizhiTouchListener());
+        if (mMeizhiListAdapter == null) {
+            mMeizhiListAdapter = new MeizhiListAdapter(this, meizhis);
+            mMeizhiListAdapter.setOnMeizhiTouchListener(getOnMeizhiTouchListener());
 
-        rvMeizhi.setAdapter(mMeizhiListAdapter);
+            rvMeizhi.setAdapter(mMeizhiListAdapter);
+        } else {
+            mMeizhiListAdapter.addItems(meizhis);
+            mMeizhiListAdapter.notifyDataSetChanged();
+        }
+        mSwipeRefreshLayout.setRefreshing(false);
     }
 
     @Override
     public void loadDataFailed(String msg) {
-
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+        mSwipeRefreshLayout.setRefreshing(false);
     }
 }
 

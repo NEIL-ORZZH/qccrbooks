@@ -17,13 +17,14 @@ final class SearchPresenter {
     private static final String TAG = "SearchPresenter";
 
     SearchView mView;
-    int mPage = 1;
+    int mPage = 0;
 
     public SearchPresenter(SearchView view) {
         mView = view;
     }
 
     public void loadData() {
+        mPage++;
         MeiZhiFactory.getGankIOSingleton()
                 .getMeizhiData(mPage)
                 .subscribeOn(Schedulers.io())

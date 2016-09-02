@@ -101,6 +101,12 @@ public class MeizhiListAdapter
     }
 
 
+    public void addItems(List<Meizhi> data) {
+        if (data != null && data.size() > 0) {
+            mList.addAll(data);
+        }
+    }
+
     public void setOnMeizhiTouchListener(OnMeizhiTouchListener onMeizhiTouchListener) {
         this.mOnMeizhiTouchListener = onMeizhiTouchListener;
     }
