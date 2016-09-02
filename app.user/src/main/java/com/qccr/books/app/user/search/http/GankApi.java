@@ -17,25 +17,31 @@
  * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.qccr.books.app.user.search;
+package com.qccr.books.app.user.search.http;
+
+
+import com.qccr.books.app.user.search.modle.MeizhiData;
+import com.qccr.books.app.user.search.modle.VideoData;
+
+import retrofit2.http.GET;
+import retrofit2.http.Path;
+import rx.Observable;
 
 /**
  * Created by drakeet on 8/9/15.
  */
-public class MeiZhiFactory {
+public interface GankApi {
 
-    public static final int MeiZhiSize = 10;
-    public static final int gankSize = 5;
-    protected static final Object monitor = new Object();
-    static GankApi sGankIOSingleton = null;
+    @GET("data/福利/" + MeiZhiFactory.MeiZhiSize + "/{page}")
+    Observable<MeizhiData> getMeizhiData(@Path("page") int page);
 
-    public static GankApi getGankIOSingleton() {
-        synchronized (monitor) {
-            if (sGankIOSingleton == null) {
-                sGankIOSingleton = new MeiZhiRetrofit().getGankService();
-            }
-            return sGankIOSingleton;
-        }
-    }
+//    @GET("/day/{year}/{month}/{day}")
+//    Observable<GankData> getGankData(
+//            @Path("year") int year,
+//            @Path("month") int month,
+//            @Path("day") int day);
+//
+@GET("data/休息视频/" + MeiZhiFactory.MeiZhiSize + "/{page}")
+Observable<VideoData> getVideoData(@Path("page") int page);
 
 }

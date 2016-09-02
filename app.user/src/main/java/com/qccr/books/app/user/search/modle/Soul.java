@@ -17,28 +17,27 @@
  * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.qccr.books.app.user.search;
+package com.qccr.books.app.user.search.modle;
 
+import com.litesuits.orm.db.annotation.Column;
+import com.litesuits.orm.db.annotation.NotNull;
+import com.litesuits.orm.db.annotation.PrimaryKey;
+import com.litesuits.orm.db.annotation.Unique;
+import com.litesuits.orm.db.enums.AssignType;
 
-import retrofit2.http.GET;
-import retrofit2.http.Path;
-import rx.Observable;
+import java.io.Serializable;
 
 /**
- * Created by drakeet on 8/9/15.
+ * Created by drakeet(http://drakeet.me)
+ * Date: 8/18/15 13:55
  */
-public interface GankApi {
+public class Soul implements Serializable {
 
-    @GET("data/福利/" + MeiZhiFactory.MeiZhiSize + "/{page}")
-    Observable<MeizhiData> getMeizhiData(@Path("page") int page);
-
-//    @GET("/day/{year}/{month}/{day}")
-//    Observable<GankData> getGankData(
-//            @Path("year") int year,
-//            @Path("month") int month,
-//            @Path("day") int day);
-//
-@GET("data/休息视频/" + MeiZhiFactory.MeiZhiSize + "/{page}")
-Observable<VideoData> getVideoData(@Path("page") int page);
-
+    @PrimaryKey(AssignType.AUTO_INCREMENT)
+    @Column("_id")
+    public long id;
+    @NotNull
+    @Unique
+    @Column("objectId")
+    public String objectId;
 }

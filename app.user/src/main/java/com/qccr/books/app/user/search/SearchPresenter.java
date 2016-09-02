@@ -1,8 +1,10 @@
 package com.qccr.books.app.user.search;
 
-import android.util.Log;
-
 import com.qccr.books.app.user.Gank;
+import com.qccr.books.app.user.search.http.MeiZhiFactory;
+import com.qccr.books.app.user.search.modle.Meizhi;
+import com.qccr.books.app.user.search.modle.MeizhiData;
+import com.qccr.books.app.user.search.modle.VideoData;
 
 import org.joda.time.DateTime;
 

@@ -21,6 +21,8 @@ package com.qccr.books.app.user.search;
 
 import android.view.View;
 
+import com.qccr.books.app.user.search.modle.Meizhi;
+
 /**
  * Created by drakeet on 7/1/15.
  */

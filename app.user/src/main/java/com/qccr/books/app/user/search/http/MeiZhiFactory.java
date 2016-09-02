@@ -17,37 +17,25 @@
  * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.qccr.books.app.user.search;
-
-import com.litesuits.orm.db.annotation.Column;
-import com.litesuits.orm.db.annotation.Table;
-
-import java.util.Date;
+package com.qccr.books.app.user.search.http;
 
 /**
- * Created by drakeet on 6/20/15.
+ * Created by drakeet on 8/9/15.
  */
-@Table("meizhis")
-public class Meizhi extends Soul {
+public class MeiZhiFactory {
 
-    @Column("url")
-    public String url;
-    @Column("type")
-    public String type;
-    @Column("desc")
-    public String desc;
-    @Column("who")
-    public String who;
-    @Column("used")
-    public boolean used;
-    @Column("createdAt")
-    public Date createdAt;
-    @Column("updatedAt")
-    public Date updatedAt;
-    @Column("publishedAt")
-    public Date publishedAt;
-    @Column("imageWidth")
-    public int imageWidth;
-    @Column("imageHeight")
-    public int imageHeight;
+    public static final int MeiZhiSize = 10;
+    public static final int gankSize = 5;
+    protected static final Object monitor = new Object();
+    static GankApi sGankIOSingleton = null;
+
+    public static GankApi getGankIOSingleton() {
+        synchronized (monitor) {
+            if (sGankIOSingleton == null) {
+                sGankIOSingleton = new MeiZhiRetrofit().getGankService();
+            }
+            return sGankIOSingleton;
+        }
+    }
+
 }

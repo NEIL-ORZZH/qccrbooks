@@ -29,6 +29,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SizeReadyCallback;
 import com.qccr.books.app.user.R;
+import com.qccr.books.app.user.search.modle.Meizhi;
 import com.qccr.books.app.user.search.widget.RatioImageView;
 
 import java.util.List;

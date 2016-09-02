@@ -1,5 +1,7 @@
 package com.qccr.books.app.user.search;
 
+import com.qccr.books.app.user.search.modle.Meizhi;
+
 import java.util.List;
 
 /**

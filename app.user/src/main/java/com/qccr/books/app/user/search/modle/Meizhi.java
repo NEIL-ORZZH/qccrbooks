@@ -17,19 +17,37 @@
  * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.qccr.books.app.user.search;
+package com.qccr.books.app.user.search.modle;
 
-import com.qccr.books.app.user.Gank;
+import com.litesuits.orm.db.annotation.Column;
+import com.litesuits.orm.db.annotation.Table;
 
-import java.util.List;
+import java.util.Date;
 
 /**
- * 中文名是故意的，请勿吐槽[笑哭]
- * Created by drakeet on 8/15/15.
+ * Created by drakeet on 6/20/15.
  */
-public class VideoData {
+@Table("meizhis")
+public class Meizhi extends Soul {
 
-    public boolean error;
-
-    public List<Gank> results;
+    @Column("url")
+    public String url;
+    @Column("type")
+    public String type;
+    @Column("desc")
+    public String desc;
+    @Column("who")
+    public String who;
+    @Column("used")
+    public boolean used;
+    @Column("createdAt")
+    public Date createdAt;
+    @Column("updatedAt")
+    public Date updatedAt;
+    @Column("publishedAt")
+    public Date publishedAt;
+    @Column("imageWidth")
+    public int imageWidth;
+    @Column("imageHeight")
+    public int imageHeight;
 }

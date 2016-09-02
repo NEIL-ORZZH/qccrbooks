@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.qccr.books.app.user.R;
+import com.qccr.books.app.user.search.modle.Meizhi;
 import com.qccr.books.app.user.search.widget.MultiSwipeRefreshLayout;
 
 import net.danlew.android.joda.JodaTimeAndroid;

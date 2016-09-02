@@ -21,7 +21,7 @@ package com.qccr.books.app.user;
 
 import com.litesuits.orm.db.annotation.Column;
 import com.litesuits.orm.db.annotation.Table;
-import com.qccr.books.app.user.search.Soul;
+import com.qccr.books.app.user.search.modle.Soul;
 
 import java.util.Date;
 
