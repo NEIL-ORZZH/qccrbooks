@@ -17,11 +17,10 @@
  * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.qccr.books.app.user;
+package com.qccr.books.app.user.search.modle;
 
 import com.litesuits.orm.db.annotation.Column;
 import com.litesuits.orm.db.annotation.Table;
-import com.qccr.books.app.user.search.modle.Soul;
 
 import java.util.Date;
 

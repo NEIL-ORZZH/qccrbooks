@@ -1,6 +1,6 @@
 package com.qccr.books.app.user.search;
 
-import com.qccr.books.app.user.Gank;
+import com.qccr.books.app.user.search.modle.Gank;
 import com.qccr.books.app.user.search.http.MeiZhiFactory;
 import com.qccr.books.app.user.search.modle.Meizhi;
 import com.qccr.books.app.user.search.modle.MeizhiData;

@@ -19,8 +19,6 @@
 
 package com.qccr.books.app.user.search.modle;
 
-import com.qccr.books.app.user.Gank;
-
 import java.util.List;
 
 /**
