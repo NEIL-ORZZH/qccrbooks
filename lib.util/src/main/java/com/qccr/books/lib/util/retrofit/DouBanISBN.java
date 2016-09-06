@@ -8,7 +8,7 @@ import rx.Observable;
  * @author: zhuhuanhuan
  * @time: 16/9/6-下午2:04.
  * @email: zhuhuanhuan@qccr.com
- * @desc:
+ * @desc: 通过ISBN号查询书籍信息
  */
 
 public interface DouBanISBN {

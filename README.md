@@ -23,9 +23,12 @@
 * https://github.com/f2prateek/rx-preferences
 * https://github.com/dlew/joda-time-android
 * https://github.com/bumptech/glide
-* http://gank.io/api
 * https://github.com/drakeet/Meizhi
 * https://github.com/square/retrofit
+
+## 感谢免费的服务
+* 伟大的豆瓣, I love u more than I can say: http://api.douban.com/v2/
+* http://gank.io/api
 
 
 ## 功能
