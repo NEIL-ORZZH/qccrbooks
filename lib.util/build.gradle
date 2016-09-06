@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'realm-android'
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -14,6 +15,7 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
     compile 'com.google.code.gson:gson:2.7'
     compile 'net.danlew:android.joda:2.9.4.1'
+
 }
 
 

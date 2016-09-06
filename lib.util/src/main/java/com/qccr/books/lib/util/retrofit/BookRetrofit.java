@@ -16,8 +16,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * @email: zhuhuanhuan@qccr.com
  * @desc:
  */
-
-public final class BookRetrofit {
+final class BookRetrofit {
 
     final DouBanISBN douBan;
 
