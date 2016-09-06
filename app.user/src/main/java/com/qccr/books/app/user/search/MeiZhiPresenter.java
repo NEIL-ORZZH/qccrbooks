@@ -24,13 +24,13 @@ import rx.schedulers.Schedulers;
  * @desc:
  */
 
-final class SearchPresenter {
-    private static final String TAG = "SearchPresenter";
+final class MeiZhiPresenter {
+    private static final String TAG = "MeiZhiPresenter";
 
-    SearchView mView;
+    MeiZhiView mView;
     int mPage = 0;
 
-    public SearchPresenter(SearchView view) {
+    public MeiZhiPresenter(MeiZhiView view) {
         mView = view;
     }
 

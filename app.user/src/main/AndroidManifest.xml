@@ -30,7 +30,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <activity
-            android:name="com.qccr.books.app.user.search.SearchActivity"
+            android:name="com.qccr.books.app.user.search.MeiZhiActivity"
             android:screenOrientation="portrait" />
 
         <activity

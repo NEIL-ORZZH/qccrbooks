@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.qccr.books.app.user.search.SearchActivity;
+import com.qccr.books.app.user.search.MeiZhiActivity;
 import com.qccr.books.lib.util.rxbus.RxBus;
 import com.qccr.books.lib.util.zbar.CaptureActivity;
 
@@ -83,7 +83,7 @@ public class UserFragment extends Fragment {
         tvFuLi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getContext(), SearchActivity.class));
+                startActivity(new Intent(getContext(), MeiZhiActivity.class));
             }
         });
     }
@@ -92,7 +92,7 @@ public class UserFragment extends Fragment {
         userSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getContext(), SearchActivity.class));
+                startActivity(new Intent(getContext(), MeiZhiActivity.class));
             }
         });
     }

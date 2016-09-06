@@ -11,7 +11,7 @@ import java.util.List;
  * @desc:
  */
 
-interface SearchView {
+interface MeiZhiView {
 
     void loadDataSuccess(List<Meizhi> meizhis);
 

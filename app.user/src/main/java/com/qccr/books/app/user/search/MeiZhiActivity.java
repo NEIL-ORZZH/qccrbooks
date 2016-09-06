@@ -29,9 +29,9 @@ import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 
-public class SearchActivity extends Activity implements SearchView {
+public class MeiZhiActivity extends Activity implements MeiZhiView {
 
-    private static final String TAG = "SearchActivity";
+    private static final String TAG = "MeiZhiActivity";
     private static final int PRELOAD_SIZE = 6;
 
     @Bind(R.id.rv_meizhi)
@@ -44,13 +44,13 @@ public class SearchActivity extends Activity implements SearchView {
     MeizhiListAdapter mMeizhiListAdapter;
 
     private boolean mIsFirstTimeTouchBottom = true;
-    private SearchPresenter mPresenter;
+    private MeiZhiPresenter mPresenter;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.activity_meizhi);
         ButterKnife.bind(this);
 
         initView();
@@ -97,7 +97,7 @@ public class SearchActivity extends Activity implements SearchView {
     }
 
     void initData() {
-        mPresenter = new SearchPresenter(this);
+        mPresenter = new MeiZhiPresenter(this);
         mPresenter.loadData();
 
         JodaTimeAndroid.init(getApplicationContext());
@@ -132,7 +132,7 @@ public class SearchActivity extends Activity implements SearchView {
                 if (v == meizhiView) {
                     startPictureActivity(meizhi, meizhiView);
                 } else if (v == card) {
-                    Toast.makeText(SearchActivity.this, "敬请期待", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MeiZhiActivity.this, "敬请期待", Toast.LENGTH_SHORT).show();
 //                    startGankActivity(meizhi.publishedAt);
                 }
             }
