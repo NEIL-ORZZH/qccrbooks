@@ -4,6 +4,7 @@ package com.qccr.books.app.user;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,16 +13,22 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.qccr.books.app.user.search.MeiZhiActivity;
+import com.qccr.books.lib.util.retrofit.DouBanBook;
+import com.qccr.books.lib.util.retrofit.DouBanFactory;
 import com.qccr.books.lib.util.rxbus.RxBus;
 import com.qccr.books.lib.util.zbar.CaptureActivity;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
+import rx.schedulers.Schedulers;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class UserFragment extends Fragment {
+
+    private static final String TAG = "UserFragment";
 
     CircleImageView userImage;
     ImageView userSetting;
@@ -55,9 +62,25 @@ public class UserFragment extends Fragment {
 
         RxBus.getDefault().toObservable().subscribe(new Action1<Object>() {
             @Override
-            public void call(Object event) {
+            public void call(final Object event) {
                 if (event instanceof String) {
                     Toast.makeText(getContext(), "scan code:" + event, Toast.LENGTH_LONG).show();
+                    DouBanFactory.getDouBanSingleton()
+                            .getMeizhiData(event.toString())
+                            .subscribeOn(Schedulers.io())
+                            .observeOn(AndroidSchedulers.mainThread())
+                            .subscribe(new Action1<DouBanBook>() {
+                                @Override
+                                public void call(DouBanBook s) {
+                                    Toast.makeText(getContext(), s.toString(), Toast.LENGTH_SHORT).show();
+                                    Log.e(TAG, "call: " + s);
+                                }
+                            }, new Action1<Throwable>() {
+                                @Override
+                                public void call(Throwable throwable) {
+                                    Log.e(TAG, "call: ", throwable);
+                                }
+                            });
                 }
             }
         });
