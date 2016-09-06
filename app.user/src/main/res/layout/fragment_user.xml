@@ -60,7 +60,7 @@
         android:layout_marginStart="10dp"
         android:drawableStart="@mipmap/ic_my_secretary"
         android:gravity="center_vertical"
-        android:text="    小秘书"
+        android:text="    扫描"
         android:textSize="15sp" />
 
     <View
