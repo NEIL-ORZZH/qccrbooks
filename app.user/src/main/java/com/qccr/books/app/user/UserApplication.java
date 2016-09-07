@@ -1,6 +1,7 @@
 package com.qccr.books.app.user;
 
 import android.app.Application;
+import android.util.Log;
 
 import com.qccr.books.lib.util.realm.RealmUtil;
 
@@ -13,6 +14,8 @@ import com.qccr.books.lib.util.realm.RealmUtil;
 
 public final class UserApplication extends Application {
 
+    private static final String TAG = "UserApplication";
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -22,5 +25,6 @@ public final class UserApplication extends Application {
 
     void init() {
         RealmUtil.init(this);
+        Log.e(TAG, "init: userapplication");
     }
 }

@@ -8,6 +8,7 @@
 
 ## 项目说明
 * butterknife只能用7.0.1的
+* realm打包时出现问题,对应的so文件无法打入
 
 ## 参考资料
 * https://github.com/wequick/Small，请到这个地址仔细阅读
