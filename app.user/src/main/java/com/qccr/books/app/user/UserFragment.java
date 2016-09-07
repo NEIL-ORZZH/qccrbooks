@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.qccr.books.app.user.book.BookActivity;
 import com.qccr.books.app.user.search.MeiZhiActivity;
 import com.qccr.books.lib.util.zbar.CaptureActivity;
 
@@ -64,6 +65,13 @@ public class UserFragment extends Fragment {
         tvNotification = (TextView) rootView.findViewById(R.id.tv_notification);
         tvSecretary = (TextView) rootView.findViewById(R.id.tv_secretary);
         tvFuLi = (TextView) rootView.findViewById(R.id.tv_fuli);
+
+        tvNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), BookActivity.class));
+            }
+        });
 
         tvSecretary.setOnClickListener(new View.OnClickListener() {
             @Override

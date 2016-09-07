@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.qccr.books.app.user">
 
-
     <uses-permission android:name="android.permission.CAMERA" />
 
     <uses-feature android:name="android.hardware.camera" />
@@ -15,29 +14,26 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".UserActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.qccr.books.lib.util.zbar.CaptureActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
         <activity
-            android:name="com.qccr.books.app.user.search.MeiZhiActivity"
+            android:name=".search.MeiZhiActivity"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name="com.qccr.books.app.user.search.PictureActivity"
+            android:name=".search.PictureActivity"
             android:screenOrientation="portrait" />
-
+        <activity android:name=".book.BookActivity"></activity>
     </application>
 
 </manifest>
