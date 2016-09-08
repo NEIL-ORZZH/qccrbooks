@@ -17,16 +17,17 @@
  * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.qccr.books.app.user.search.modle;
+package com.qccr.books.app.user.meizhi.modle;
 
 import java.util.List;
 
 /**
- * Created by drakeet on 8/9/15.
+ * 中文名是故意的，请勿吐槽[笑哭]
+ * Created by drakeet on 8/15/15.
  */
-public class MeizhiData {
+public class VideoData {
 
     public boolean error;
 
-    public List<Meizhi> results;
+    public List<Gank> results;
 }

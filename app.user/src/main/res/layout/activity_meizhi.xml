@@ -22,7 +22,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.qccr.books.app.user.search.widget.MultiSwipeRefreshLayout
+    <com.qccr.books.app.user.meizhi.widget.MultiSwipeRefreshLayout
         android:id="@+id/swipe_refresh_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -35,7 +35,7 @@
             android:paddingLeft="2.5dp"
             android:paddingRight="2.5dp" />
 
-    </com.qccr.books.app.user.search.widget.MultiSwipeRefreshLayout>
+    </com.qccr.books.app.user.meizhi.widget.MultiSwipeRefreshLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/main_fab"
@@ -51,7 +51,7 @@
         app:elevation="4dp"
         app:layout_anchor="@id/swipe_refresh_layout"
         app:layout_anchorGravity="right|bottom"
-        app:layout_behavior="com.qccr.books.app.user.search.widget.ScrollAwareFABBehavior" />
+        app:layout_behavior="com.qccr.books.app.user.meizhi.widget.ScrollAwareFABBehavior" />
 
 </android.support.design.widget.CoordinatorLayout>
 

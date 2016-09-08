@@ -17,25 +17,17 @@
  * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.qccr.books.app.user.search.http;
+package com.qccr.books.app.user.meizhi.modle;
+
+import java.io.Serializable;
+
 
 /**
- * Created by drakeet on 8/9/15.
+ * Created by drakeet(http://drakeet.me)
+ * Date: 8/18/15 13:55
  */
-public class MeiZhiFactory {
+public class Soul implements Serializable {
 
-    public static final int MeiZhiSize = 10;
-    public static final int gankSize = 5;
-    protected static final Object monitor = new Object();
-    static GankApi sGankIOSingleton = null;
-
-    public static GankApi getGankIOSingleton() {
-        synchronized (monitor) {
-            if (sGankIOSingleton == null) {
-                sGankIOSingleton = new MeiZhiRetrofit().getGankService();
-            }
-            return sGankIOSingleton;
-        }
-    }
-
+    public long id;
+    public String objectId;
 }

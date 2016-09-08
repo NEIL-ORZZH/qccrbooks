@@ -17,15 +17,21 @@
  * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.qccr.books.app.user.search;
+package com.qccr.books.app.user.meizhi.modle;
 
-import android.view.View;
-
-import com.qccr.books.app.user.search.modle.Meizhi;
+import java.util.Date;
 
 /**
- * Created by drakeet on 7/1/15.
+ * Created by drakeet on 8/11/15.
  */
-public interface OnMeizhiTouchListener {
-    void onTouch(View v, View meizhiView, View card, Meizhi meizhi);
+public class Gank extends Soul {
+
+    public String url;
+    public String type;
+    public String desc;
+    public String who;
+    public boolean used;
+    public Date createdAt;
+    public Date updatedAt;
+    public Date publishedAt;
 }

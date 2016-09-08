@@ -28,10 +28,10 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".search.MeiZhiActivity"
+            android:name=".meizhi.MeiZhiActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".search.PictureActivity"
+            android:name=".meizhi.PictureActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".book.BookActivity"></activity>
     </application>

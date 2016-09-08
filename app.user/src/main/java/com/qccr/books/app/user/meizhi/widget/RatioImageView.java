@@ -17,7 +17,7 @@
  * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.qccr.books.app.user.search.widget;
+package com.qccr.books.app.user.meizhi.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;

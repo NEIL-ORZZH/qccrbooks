@@ -1,4 +1,4 @@
-package com.qccr.books.app.user.search;
+package com.qccr.books.app.user.meizhi;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,8 +15,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.qccr.books.app.user.R;
-import com.qccr.books.app.user.search.modle.Meizhi;
-import com.qccr.books.app.user.search.widget.MultiSwipeRefreshLayout;
+import com.qccr.books.app.user.meizhi.modle.Meizhi;
+import com.qccr.books.app.user.meizhi.widget.MultiSwipeRefreshLayout;
 
 import net.danlew.android.joda.JodaTimeAndroid;
 

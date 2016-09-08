@@ -17,33 +17,16 @@
  * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.qccr.books.app.user.search.modle;
+package com.qccr.books.app.user.meizhi.modle;
 
-import com.litesuits.orm.db.annotation.Column;
-import com.litesuits.orm.db.annotation.Table;
-
-import java.util.Date;
+import java.util.List;
 
 /**
- * Created by drakeet on 8/11/15.
+ * Created by drakeet on 8/9/15.
  */
-@Table("ganks")
-public class Gank extends Soul {
+public class MeizhiData {
 
-    @Column("url")
-    public String url;
-    @Column("type")
-    public String type;
-    @Column("desc")
-    public String desc;
-    @Column("who")
-    public String who;
-    @Column("used")
-    public boolean used;
-    @Column("createdAt")
-    public Date createdAt;
-    @Column("updatedAt")
-    public Date updatedAt;
-    @Column("publishedAt")
-    public Date publishedAt;
+    public boolean error;
+
+    public List<Meizhi> results;
 }

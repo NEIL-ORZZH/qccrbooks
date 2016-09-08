@@ -17,7 +17,7 @@
  * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.qccr.books.app.user.search.http;
+package com.qccr.books.app.user.meizhi.http;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

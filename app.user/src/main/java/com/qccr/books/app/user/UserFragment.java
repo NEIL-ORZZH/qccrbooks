@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.qccr.books.app.user.book.BookActivity;
-import com.qccr.books.app.user.search.MeiZhiActivity;
+import com.qccr.books.app.user.meizhi.MeiZhiActivity;
 import com.qccr.books.lib.util.zbar.CaptureActivity;
 
 import de.hdodenhof.circleimageview.CircleImageView;

@@ -1,10 +1,10 @@
-package com.qccr.books.app.user.search;
+package com.qccr.books.app.user.meizhi;
 
-import com.qccr.books.app.user.search.modle.Gank;
-import com.qccr.books.app.user.search.http.MeiZhiFactory;
-import com.qccr.books.app.user.search.modle.Meizhi;
-import com.qccr.books.app.user.search.modle.MeizhiData;
-import com.qccr.books.app.user.search.modle.VideoData;
+import com.qccr.books.app.user.meizhi.modle.Gank;
+import com.qccr.books.app.user.meizhi.http.MeiZhiFactory;
+import com.qccr.books.app.user.meizhi.modle.Meizhi;
+import com.qccr.books.app.user.meizhi.modle.MeizhiData;
+import com.qccr.books.app.user.meizhi.modle.VideoData;
 
 import org.joda.time.DateTime;
 

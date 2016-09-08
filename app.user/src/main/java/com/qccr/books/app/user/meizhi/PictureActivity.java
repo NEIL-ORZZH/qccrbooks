@@ -17,7 +17,7 @@
  * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.qccr.books.app.user.search;
+package com.qccr.books.app.user.meizhi;
 
 import android.app.Activity;
 import android.content.Context;

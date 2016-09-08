@@ -17,17 +17,15 @@
  * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.qccr.books.app.user.search.modle;
+package com.qccr.books.app.user.meizhi;
 
-import java.util.List;
+import android.view.View;
+
+import com.qccr.books.app.user.meizhi.modle.Meizhi;
 
 /**
- * 中文名是故意的，请勿吐槽[笑哭]
- * Created by drakeet on 8/15/15.
+ * Created by drakeet on 7/1/15.
  */
-public class VideoData {
-
-    public boolean error;
-
-    public List<Gank> results;
+public interface OnMeizhiTouchListener {
+    void onTouch(View v, View meizhiView, View card, Meizhi meizhi);
 }

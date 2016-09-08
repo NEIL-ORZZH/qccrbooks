@@ -30,7 +30,7 @@
     android:orientation="vertical"
     android:visibility="invisible">
 
-    <com.qccr.books.app.user.search.widget.RatioImageView
+    <com.qccr.books.app.user.meizhi.widget.RatioImageView
         android:id="@+id/iv_meizhi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

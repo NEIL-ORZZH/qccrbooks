@@ -17,7 +17,7 @@
  * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.qccr.books.app.user.search;
+package com.qccr.books.app.user.meizhi;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -30,8 +30,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.target.SizeReadyCallback;
 import com.qccr.books.app.user.R;
-import com.qccr.books.app.user.search.modle.Meizhi;
-import com.qccr.books.app.user.search.widget.RatioImageView;
+import com.qccr.books.app.user.meizhi.modle.Meizhi;
+import com.qccr.books.app.user.meizhi.widget.RatioImageView;
 
 import java.util.List;
 

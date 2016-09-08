@@ -17,27 +17,23 @@
  * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.qccr.books.app.user.search.modle;
+package com.qccr.books.app.user.meizhi.modle;
 
-import com.litesuits.orm.db.annotation.Column;
-import com.litesuits.orm.db.annotation.NotNull;
-import com.litesuits.orm.db.annotation.PrimaryKey;
-import com.litesuits.orm.db.annotation.Unique;
-import com.litesuits.orm.db.enums.AssignType;
-
-import java.io.Serializable;
+import java.util.Date;
 
 /**
- * Created by drakeet(http://drakeet.me)
- * Date: 8/18/15 13:55
+ * Created by drakeet on 6/20/15.
  */
-public class Soul implements Serializable {
+public class Meizhi extends Soul {
 
-    @PrimaryKey(AssignType.AUTO_INCREMENT)
-    @Column("_id")
-    public long id;
-    @NotNull
-    @Unique
-    @Column("objectId")
-    public String objectId;
+    public String url;
+    public String type;
+    public String desc;
+    public String who;
+    public boolean used;
+    public Date createdAt;
+    public Date updatedAt;
+    public Date publishedAt;
+    public int imageWidth;
+    public int imageHeight;
 }
