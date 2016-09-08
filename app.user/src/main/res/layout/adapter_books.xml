@@ -1,74 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="150dp"
-    android:orientation="vertical">
+    android:layout_marginEnd="4dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginTop="5dp"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardCornerRadius="8dp"
+    app:elevation="8dp">
 
-    <ImageView
-        android:id="@+id/iv_book"
-        android:layout_width="60dp"
-        android:layout_height="80dp"
-        android:layout_centerVertical="true"
-        android:layout_marginEnd="4dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
-        tools:src="@mipmap/ic_launcher" />
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
-        android:layout_toEndOf="@+id/iv_book"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/tv_booktitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            tools:text="Android开发精要" />
-
-        <TextView
-            android:id="@+id/tv_booksubtitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="范怀宇 著" />
+        <ImageView
+            android:id="@+id/iv_book"
+            android:layout_width="60dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            tools:src="@mipmap/ic_launcher" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <RatingBar
-                android:id="@+id/rb_bookrating"
-                style="?android:attr/ratingBarStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:numStars="5"
-                android:rating="3.5" />
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@+id/iv_book"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_bookpingjia"
-                android:layout_width="wrap_content"
+                android:id="@+id/tv_booktitle"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="7.0 (1评价)" />
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="Android开发精要" />
 
+            <TextView
+                android:id="@+id/tv_booksubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="范怀宇 著" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RatingBar
+                    android:id="@+id/rb_bookrating"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="3.5" />
+
+                <TextView
+                    android:id="@+id/tv_bookpingjia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="7.0 (1评价)" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_bookdesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="4"
+                tools:text="本书如何才能写出贴近Android设计理念、能够更加高效喝可靠运行的Android应用?" />
+
+            <TextView
+                android:id="@+id/tv_bookprice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="30.00" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/tv_bookdesc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLines="4"
-            tools:text="本书如何才能写出贴近Android设计理念、能够更加高效喝可靠运行的Android应用?" />
-
-        <TextView
-            android:id="@+id/tv_bookprice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="30.00" />
-    </LinearLayout>
-
-</RelativeLayout>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

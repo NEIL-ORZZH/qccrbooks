@@ -3,6 +3,7 @@ package com.qccr.books.app.user.book;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
@@ -30,7 +31,9 @@ public class BookActivity extends AppCompatActivity implements BookView {
 
     void initView() {
         mRvBooks = (RecyclerView) findViewById(R.id.rv_books);
-        mRvBooks.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(OrientationHelper.VERTICAL);
+        mRvBooks.setLayoutManager(linearLayoutManager);
         mAdapter = new BookListAdapter(this, new ArrayList<Book>());
         mRvBooks.setAdapter(mAdapter);
     }

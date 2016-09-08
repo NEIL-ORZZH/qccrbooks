@@ -52,10 +52,12 @@ final class BookListAdapter extends RecyclerView.Adapter<BookListAdapter.ViewHol
         holder.tvBookPingJia.setText(book.getRating());
         holder.tvBookDesc.setText(book.getSummary());
         holder.tvBookPrice.setText(book.getPrice());
+        holder.rbBookRating.setRating(Float.valueOf(book.getRating()));
+        holder.rbBookRating.setDrawingCacheBackgroundColor(mContent.getResources().getColor(android.R.color.holo_red_light));
 
 
         Glide.with(mContent)
-                .load(book.getSmallPic())
+                .load(book.getMediumPic())
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.SOURCE)
                 .into(holder.ivBook);
