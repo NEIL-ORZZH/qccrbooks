@@ -47,23 +47,6 @@ final class BookPresentor {
                         Log.e(TAG, "call: ", throwable);
                     }
                 });
-//        RealmUtil.getRealm()
-//                .where(Book.class)
-//                .findAll()
-//                .asObservable()
-//                .subscribeOn(AndroidSchedulers.mainThread())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(new Action1<RealmResults<Book>>() {
-//                    @Override
-//                    public void call(RealmResults<Book> books) {
-//                        mView.loadBooksSuccess(books);
-//                    }
-//                }, new Action1<Throwable>() {
-//                    @Override
-//                    public void call(Throwable throwable) {
-//                        Log.e(TAG, "call: ", throwable);
-//                        mView.loadBooksFailed(throwable.toString());
-//                    }
-//                });
+
     }
 }

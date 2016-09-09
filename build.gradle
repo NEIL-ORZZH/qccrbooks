@@ -7,7 +7,6 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:2.1.3'
         classpath 'net.wequick.tools.build:gradle-small:1.0.0-beta9'
-//        classpath 'org.greenrobot:greendao-gradle-plugin:3.1.1'
     }
 }
 

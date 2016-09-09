@@ -13,7 +13,6 @@ import org.greenrobot.greendao.database.Database;
 
 public final class DBHelper {
 
-    private static final boolean ENCRYPTED = false;
     private static DaoSession daoSession;
 
     private DBHelper() {
@@ -25,8 +24,8 @@ public final class DBHelper {
      * @param application
      */
     public static void init(Application application) {
-        DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(application, ENCRYPTED ? "notes-db-encrypted" : "notes-db");
-        Database db = ENCRYPTED ? helper.getEncryptedWritableDb("super-secret") : helper.getWritableDb();
+        DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(application, "book");
+        Database db = helper.getWritableDb();
         daoSession = new DaoMaster(db).newSession();
     }
 
