@@ -26,6 +26,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name="com.qccr.books.app.user.meizhi.MeiZhiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.qccr.books.app.user.meizhi.PictureActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.qccr.books.app.user.book.BookActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.qccr.books.lib.util.zbar.CaptureActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

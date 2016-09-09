@@ -3,7 +3,7 @@ package com.qccr.books.app.user;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,21 +69,21 @@ public class UserFragment extends Fragment {
         tvNotification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getContext(), BookActivity.class));
+                startActivity(new Intent(getActivity(), BookActivity.class));
             }
         });
 
         tvSecretary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getContext(), CaptureActivity.class));
+                startActivity(new Intent(getActivity(), CaptureActivity.class));
             }
         });
 
         tvFuLi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getContext(), MeiZhiActivity.class));
+                startActivity(new Intent(getActivity(), MeiZhiActivity.class));
             }
         });
     }
@@ -92,7 +92,7 @@ public class UserFragment extends Fragment {
         userSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getContext(), MeiZhiActivity.class));
+                startActivity(new Intent(getActivity(), MeiZhiActivity.class));
             }
         });
 

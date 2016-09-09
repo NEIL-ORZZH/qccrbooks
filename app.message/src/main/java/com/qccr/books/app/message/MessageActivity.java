@@ -1,9 +1,9 @@
 package com.qccr.books.app.message;
 
+import android.app.Activity;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+import android.app.Fragment;
 
 /**
  * @author: zhuhuanhuan
@@ -12,7 +12,7 @@ import android.support.v7.app.AppCompatActivity;
  * @version: 1.0.0
  * @desc:
  */
-public class MessageActivity extends AppCompatActivity {
+public class MessageActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class MessageActivity extends AppCompatActivity {
 
     void initView() {
         Fragment messageFragment = new MessageFragment();
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.add(R.id.frameLayout, messageFragment);
         transaction.commit();
 

@@ -3,7 +3,7 @@ package com.qccr.books.app.user;
 import android.app.Application;
 import android.util.Log;
 
-import com.qccr.books.lib.util.realm.RealmUtil;
+import com.qccr.books.lib.util.greendao.DBHelper;
 
 /**
  * @author: zhuhuanhuan
@@ -24,7 +24,7 @@ public final class UserApplication extends Application {
     }
 
     void init() {
-        RealmUtil.init(this);
+        DBHelper.init(this);
         Log.e(TAG, "init: userapplication");
     }
 }

@@ -1,11 +1,11 @@
 package com.qccr.books.app.topic;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 
-public class TopicActivity extends AppCompatActivity {
+public class TopicActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class TopicActivity extends AppCompatActivity {
 
     void initView() {
         Fragment topicFragment = new TopicFragment();
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.add(R.id.frameLayout, topicFragment);
         transaction.commit();
 

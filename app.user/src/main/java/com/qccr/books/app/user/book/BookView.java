@@ -1,6 +1,6 @@
 package com.qccr.books.app.user.book;
 
-import com.qccr.books.lib.util.realm.Book;
+import com.qccr.books.lib.util.greendao.Book;
 
 import java.util.List;
 

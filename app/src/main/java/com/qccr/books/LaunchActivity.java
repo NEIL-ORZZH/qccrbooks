@@ -1,8 +1,8 @@
 package com.qccr.books;
 
+import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -16,7 +16,7 @@ import net.wequick.small.Small;
  * @version: 1.0.0
  * @desc:
  */
-public class LaunchActivity extends AppCompatActivity {
+public class LaunchActivity extends Activity {
 
     private static final String TAG = "LaunchActivity";
 

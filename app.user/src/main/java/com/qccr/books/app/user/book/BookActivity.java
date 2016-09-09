@@ -1,19 +1,19 @@
 package com.qccr.books.app.user.book;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
 import com.qccr.books.app.user.R;
-import com.qccr.books.lib.util.realm.Book;
+import com.qccr.books.lib.util.greendao.Book;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookActivity extends AppCompatActivity implements BookView {
+public class BookActivity extends Activity implements BookView {
 
     RecyclerView mRvBooks;
     BookListAdapter mAdapter;

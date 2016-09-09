@@ -1,11 +1,11 @@
 package com.qccr.books.app.message.book;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 import com.qccr.books.app.message.R;
 
-public class BookDetailActivity extends AppCompatActivity {
+public class BookDetailActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

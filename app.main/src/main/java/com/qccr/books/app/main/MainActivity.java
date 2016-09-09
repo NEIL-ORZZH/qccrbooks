@@ -1,9 +1,9 @@
 package com.qccr.books.app.main;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.util.Log;
 
 import net.wequick.small.Small;
@@ -22,7 +22,7 @@ import me.majiajie.pagerbottomtabstrip.listener.OnTabItemSelectListener;
  * @version: 1.0.0
  * @desc:
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
     private static final String TAG = MainActivity.class.getName();
 
     PagerBottomTabLayout mTab;
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             public void onSelected(int index, Object tag) {
                 Log.i(TAG, "onSelected:" + index + "   TAG: " + tag.toString());
 
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.frameLayout, mFragments.get(index));
                 transaction.commit();
             }
@@ -72,11 +72,11 @@ public class MainActivity extends AppCompatActivity {
 
     void initFragments() {
         mFragments = new ArrayList<>();
-        mFragments.add((Fragment) Small.createObject("fragment-v4", "topic/fragment", MainActivity.this));
-        mFragments.add((Fragment) Small.createObject("fragment-v4", "message/fragment", MainActivity.this));
-        mFragments.add((Fragment) Small.createObject("fragment-v4", "user/fragment", MainActivity.this));
+        mFragments.add((Fragment) Small.createObject("fragment", "topic/fragment", MainActivity.this));
+        mFragments.add((Fragment) Small.createObject("fragment", "message/fragment", MainActivity.this));
+        mFragments.add((Fragment) Small.createObject("fragment", "user/fragment", MainActivity.this));
 
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.add(R.id.frameLayout, mFragments.get(0));
         transaction.commit();
     }

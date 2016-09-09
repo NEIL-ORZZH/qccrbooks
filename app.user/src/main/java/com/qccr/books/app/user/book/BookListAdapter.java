@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.qccr.books.app.user.R;
-import com.qccr.books.lib.util.realm.Book;
+import com.qccr.books.lib.util.greendao.Book;
 
 import java.util.List;
 
